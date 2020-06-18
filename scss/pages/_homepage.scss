@@ -1,0 +1,34 @@
+
+@font-face {
+    font-family: 'Space Grotesk Bold';
+    font-style: normal;
+    font-weight: bold;
+    src: local('Space Grotesk Bold'), url('fonts/SpaceGrotesk-Bold.otf') format('otf');
+}
+
+
+body{
+    background: url(../../imgs/header-bg.png) no-repeat;
+    background-size: cover;
+    overflow-x: hidden;
+    font-family:"Space Grotesk Bold" ,-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+}
+
+// fixed thing 
+.moving{
+    width:10px;
+    height: 10px;
+    display: block;
+    position: absolute;
+    transform: translate(-100%,-100%);
+    z-index: 1000000000000;
+    background-color: rgba($mainColor,.6);
+    border-radius: 50%;
+
+}
+// end fixed things
+
+
+
+
+

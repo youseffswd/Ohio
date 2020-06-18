@@ -1,0 +1,72 @@
+.button{
+    @extend %flex;
+    justify-content: flex-end;
+    
+    button{
+        border: none;
+        background-color: #D90A2C;
+        @extend %flex;
+        justify-content: center;
+        outline: none;
+        
+        padding: 12px 17px;
+        border-radius: 5px;
+        @extend %transition;
+        span:first-of-type{
+            
+            svg{
+                fill:#fff;
+                stroke:#fff;
+            }
+            &::after{
+                content:"";
+                display: inline-block;
+                margin: 5px auto;
+                height: .5px;
+                width: 20px;
+                background-color: rgba(#fff , .8);
+                
+                transform: rotate(90deg);
+                
+            }
+        }
+        span:last-of-type{
+            color: #fff;
+            font-weight: 600;
+            font-size: 17px;
+            letter-spacing: .4px;
+        }
+        &:hover{
+            background-color: $wordsColor;
+        }
+    }
+}
+span.iconBtn{
+    @extend %flex;
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    background: rgba(136,136,136,.03);
+    justify-content: center;
+    
+    color: $wordsColor;
+    font-size:34px ;
+    @extend %transition;
+    cursor: pointer;
+    margin-right: 12px;
+    ion-icon{
+        --ionicon-stroke-width: 18px;
+    }
+    &:hover{
+        background: rgba(136,136,136,.13);
+    }
+    
+}
+
+%flex{
+    display: flex;
+    align-items: center;
+}
+%transition{
+    transition: $transition
+}
