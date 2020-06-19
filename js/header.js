@@ -85,23 +85,39 @@ close.onclick = () => {
     document.body.style.overflow = "visible"
     document.body.style.overflowX = "hidden"
     //close.style.animation = "follow .2s linear"
-    theStyleOfAnimation(close,"follow .2s linear")
-    setTimeout(() => {
-        items.style.left = "-100%"
-    
+    if(window.innerWidth < 768){
+            theStyleOfAnimation(close,"follow .2s linear")
         setTimeout(() => {
-            //close.style.animation = "none"
+        items.style.left = "-100%"
+        
+            setTimeout(() => {
+                //close.style.animation = "none"
+                theStyleOfAnimation(close,"none")
+                gsap.to(".swimming", {duration:.5,opacity:0})
+                gsap.to(".swimming" , {duration:.1,delay:.5,display:"none"})
+                if(window.innerWidth > 768){
+                    aniD = 0.00
+                    oneToTwo.forEach(ele => {
+                        theStyleOfAnimation(ele , `none`)
+                    })
+                }
+            },260)
+        },200)
+    }else{
+        theStyleOfAnimation(close,"follow .2s linear")
+        setTimeout(() => {
+            
             theStyleOfAnimation(close,"none")
             gsap.to(".swimming", {duration:.5,opacity:0})
             gsap.to(".swimming" , {duration:.1,delay:.5,display:"none"})
-            if(window.innerWidth > 768){
+            
                 aniD = 0.00
                 oneToTwo.forEach(ele => {
                     theStyleOfAnimation(ele , `none`)
                 })
-            }
-        },260)
-    },200)
+            
+        },200)
+    }
 }
 
 
@@ -213,10 +229,10 @@ items2.onmousemove = (e) => {
 // }
 
 // imgs animation
-gsap.from(".header .container-fluid", {duration: 1.2, x:-800,opacity:0})
-gsap.from(".l", {duration: 1.2, x:150,opacity:0})
-gsap.from(".md", {duration: 1.2, y:150,opacity:0})
-gsap.from(".r", {duration: 1.2, x:-150,opacity:0})
+gsap.from(".header .container-fluid", {duration: .6, x:-800,opacity:0})
+gsap.from(".l", {duration: .6, x:150,opacity:0})
+gsap.from(".md", {duration: .6, y:150,opacity:0})
+gsap.from(".r", {duration: .6, x:-150,opacity:0})
 // main functions
 function theStyleOfAnimation(ele,val){
     ele.style.animation = val
