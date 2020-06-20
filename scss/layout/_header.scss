@@ -1,11 +1,9 @@
 header{
     @extend %width;
-    height: 95vh;
-    background-color: rgba($mainColor, .07);
+    height: 100vh;
     background: url(../../imgs/header-bg.png),linear-gradient(to left , rgba($mainColor, .1), rgba($mainColor, .1)) no-repeat;
     background-size: cover;
-    width:100%;
-    height:auto;
+    overflow: hidden;
     @media (min-width: 768px) { 
         height:140vh
     }
