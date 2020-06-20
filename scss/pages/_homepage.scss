@@ -8,12 +8,17 @@
 
 
 body{
-    background: url(../../imgs/header-bg.png) no-repeat;
-    background-size: cover;
+    
     overflow-x: hidden;
+    height:4000px;
     font-family:"Space Grotesk Bold" ,-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
 }
-
+.ok{
+    background: url(../../imgs/header-bg.png) no-repeat;
+    background-size: cover;
+    width:100%;
+    height:auto;
+}
 // fixed thing 
 .moving{
     width:10px;
@@ -31,12 +36,17 @@ body{
 .social{
     transform: rotate(-90deg);
     position: fixed;
-    right: -8%;
+    right: -9%;
     top: 45%;
     z-index: 1000;
     @media (max-width:991px){
         display:none;
     }
+    @media (min-width:1200px){
+        right:-6.5%;
+    }
+
+    
     ul{
         list-style: none;
         
@@ -123,9 +133,19 @@ body{
     }
 }
 .prices{
-    padding: 40px 10px;
-    background-color: rgba(#1a191d, 1);
-
+    padding: 40px 0px;
+    background-color: rgba(#000, .95);
+    @media (min-width: 768px) {
+        padding:60px 0;
+    }
+    @media (min-width: 992px) {
+        padding:120px 0;
+    }
+    @media (min-width:1200px){
+        padding:190px 0 80px 0;
+    }
+    .row{
+        padding:0 15px;
         .msg{
             position: relative;
             width:90% ;
@@ -136,33 +156,249 @@ body{
             border-radius:2%;
             box-shadow: 5px 5px 0px 2px #d1d1d1;;
             margin:0 auto 40px auto;
-            span{
+            
+            @media (min-width: 768px) {
+                width:100%;
+                padding: 14px 15px 15px 0;
+            }
+            @media (min-width:992px){
+                margin:0 auto 50px auto;
+
+            }
+            @media (min-width:1200px){
+                margin:0 auto 70px auto;
+
+            }
+            >span{
                 display: block;
                 position: absolute;
                 width: 20px;
                 height: 20px;
                 top: -11%;
                 background-color: #fff;
-                clip-path: polygon(0 0, 9% 100%, 100% 100%)
+                clip-path: polygon(0 0, 9% 100%, 100% 100%);
+                @media (min-width: 768px) {
+                    width: 25px;
+                    height: 25px;
+                    top: -20%;
+                    left: 2%;
+                }
             }
-            p{
-                color: $wordsColor;
-                font-weight:600;
+            >div{
+                display:flex;
+                flex-wrap: nowrap;
+                >span:first-of-type{
+                    padding:0 20px;
+
+                    display:none;
+                    @media (min-width: 768px) {
+                        display:flex;
+                        justify-content: center;
+                        align-items: center;
+                    }
+                    .icon{
+                        width:55px;
+                        height:55px;
+                        border-radius: 50%;
+                        display:flex;
+                        justify-content: center;
+                        align-items: center;
+
+                        background: rgba($greenColor , .3);
+                        svg{
+                            fill: $greenColor;
+                        }
+                    }
+                }
+                >span:last-of-type{
+                    display:block;
+                    p{
+                        color: $wordsColor;
+                        font-weight:600;
+                        @media (min-width: 768px) {
+                            font-weight:400;
+                            
+                            margin:0;
+                        }
+                    }
+                }
             }
            
             
         }
         .no-box{
             margin-top: 10px;
-            h2{
-                color:#fff;
-                font-size:22px;
-                span{
-                    background-color:$mainColor;
-                    font-size:12px;
+            padding-bottom: 30px;
+            @media (min-width:992px){
+                padding-bottom: 50px;
+            }
+            @media (min-width:1200px){
+                padding-bottom: 70px;
+            }
+        }
+        .price-badge{
+            .content{
+                padding:30px 0;
+                border-top: .5px solid rgba(#fff , .1);
+                @media (min-width: 992px) {
+                    padding-right:10px;
+                }
+                @media (min-width:1200px){
+                    padding:20px
+    
+                }
+                .first{
+                    display:flex;
+                    flex-wrap: nowrap;
+                    div:first-of-type{
+                        margin-right: 20px;
+                        span{
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;
+                            width: 58px;
+                            height: 58px;
+                            border-radius: 50px;
+                            border: 0.5px solid rgba(#fff,.3);
+                            
+                        }
+                        span:last-of-type svg{
+                            animation: rotating 2s infinite linear;
+                        }
+                    }
+                    div:last-of-type{
+                        display:flex;
+                        align-items: center;
+                        flex-wrap:wrap;
+                        h5{
+                            color:#fff;
+                            font-size:15px;
+                            font-weight:bold;
+                            width:100%;
+                            @media (min-width: 576px) {
+                                font-size:18px
+                            }
+                            @media (min-width: 992px) {
+                                font-size:15px
+                            }
+                            @media (min-width:1200px){
+                                font-size:18px;
+                
+                            }
+                        }
+                        span{
+                            font-size:16px;
+                            font-weight:lighter;
+                            color:rgba(#fff,.5);
+                            letter-spacing:.8px;
+                            @media (min-width: 576px) {
+                                font-size:19px
+                            }
+                            @media (min-width: 992px) {
+                                font-size:16px
+                            }
+                            @media (min-width:1200px){
+                                font-size:19px
+                
+                            }
+                        }
+                    }
+                    
+                }
+                .second{
+                    margin-top: 30px;
+                    display:flex;
+                    flex-wrap:nowrap;
+                    align-items: center;
+                    
+                    padding-bottom: 30px;
+                    h2{
+                        color:#fff;
+                        font-size:23px;
+                        font-weight:700;
+                        
+                    }
+                    span{
+                        display:block;
+                        
+                        background-color:$mainColor;
+                        font-size:14px;
+                        margin-left:auto;
+                        padding:5px 7px;
+                        font-weight:500;
+                        @media (min-width: 576px) {
+                            font-size:16px
+                        }
+                    }
                 }
             }
         }
+    }
+}
+.pric2{
+    padding:40px 0;
+    background: rgba(#000,1);
+    .content{
+        padding:0 15px;
+        .row{
+            margin:0;
+            .pric-badge{
+                display:flex;
+                flex-direction: column;
+                padding:30px 0;
+                .img{
+                    margin-bottom: 15px;
+
+                    img{
+                        width:30px;
+                        
+                        @media (min-width: 992px) {
+                            width:35px;
+                        }
+                        @media (min-width: 1200px) {
+                            width:40px;
+                        }
+                    }
+
+                }
+                color: #fff;
+                font-weight: 600;
+                .counter{
+                    margin-bottom: 15px;
+                    font-size: 40px;
+                    @media (min-width: 576px) {
+                        font-size:43px;
+                    }
+                    @media (min-width: 768px) {
+                        font-size:46px;
+                    }
+                    @media (min-width: 992px) {
+                        font-size:50px;
+                    }
+                    @media (min-width: 1200px) {
+                        font-size:53px;
+                    }
+                }
+                div:last-of-type{
+                    h3{
+                        font-size:23px;
+                        @media (min-width: 576px) {
+                            font-size:25px;
+                        }
+                        @media (min-width: 768px) {
+                            font-size:27px;
+                        }
+                        @media (min-width: 992px) {
+                            font-size:25px;
+                        }
+                        @media (min-width: 1200px) {
+                            font-size:30px;
+                        }
+                    }
+                }
+            }
+        }
+    }
 }
 @keyframes hop{
     0%{
@@ -175,9 +411,22 @@ body{
         box-shadow:0px 0px 0 0px rgba($greenColor  , .1);
     }
 }
+@keyframes rotating {
+    from{
+        transform:rotate(0deg)
+    }
+    to{
+        transform:rotate(360deg)
+    }
+}
 // end fixed things
 
 
 
 
 
+// @media (min-width: 576px) {}
+// @media (min-width: 768px) {}
+// @media (min-width: 992px) {}
+// @media (min-width: 1200px) {}
+// 

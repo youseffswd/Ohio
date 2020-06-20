@@ -2,6 +2,10 @@ header{
     @extend %width;
     height: 95vh;
     background-color: rgba($mainColor, .07);
+    background: url(../../imgs/header-bg.png),linear-gradient(to left , rgba($mainColor, .1), rgba($mainColor, .1)) no-repeat;
+    background-size: cover;
+    width:100%;
+    height:auto;
     @media (min-width: 768px) { 
         height:140vh
     }
@@ -385,8 +389,8 @@ header{
             @media (min-width: 992px) {
                 width: 90%;
                 height: 275px;
-                top: -60px;
-                left: 6%;
+                top: -110px;
+                left: 10%;
                 transform: rotate(-33deg);
             }
             @media (min-width: 1200px) { 

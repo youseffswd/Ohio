@@ -50,13 +50,15 @@ function clearWords() {
 let numbersContent = document.querySelectorAll(".header .content .second span"),
     numbers = [27,38,12];
 numbersContent.forEach((number,index) => {
-    let counter = setInterval(() => {
-        if(number.textContent == numbers[index] ) {
-            clearInterval(counter)
-            return
-        }
-        number.textContent = parseInt(number.textContent) + 1
-    }, 1500 / numbers[index])
+    setTimeout(() => {
+        let counter = setInterval(() => {
+            if(number.textContent == numbers[index] ) {
+                clearInterval(counter)
+                return
+            }
+            number.textContent = parseInt(number.textContent) + 1
+        }, 1500 / numbers[index])
+    },800)
 })
 
 // end counter animation
@@ -187,9 +189,7 @@ section.forEach((section,index) => {
         })
     }
 })
-items2.onmousemove = (e) => {
-   
-}
+
 // function mdNav (arr,index){
 //         Object.keys(arr[0])[0].style.transform = arr[0].section
 //         Object.keys(arr[1])[0][index].style.color =  arr[1].a[index]
@@ -229,10 +229,10 @@ items2.onmousemove = (e) => {
 // }
 
 // imgs animation
-gsap.from(".header .container-fluid", {duration: .6, x:-800,opacity:0})
-gsap.from(".l", {duration: .6, x:150,opacity:0})
-gsap.from(".md", {duration: .6, y:150,opacity:0})
-gsap.from(".r", {duration: .6, x:-150,opacity:0})
+gsap.from(".header .container-fluid", {duration: .8, x:-800,opacity:0})
+gsap.from(".l", {duration: .8, x:150,opacity:0})
+gsap.from(".md", {duration: .8, y:150,opacity:0})
+gsap.from(".r", {duration: .8, x:-150,opacity:0})
 // main functions
 function theStyleOfAnimation(ele,val){
     ele.style.animation = val
