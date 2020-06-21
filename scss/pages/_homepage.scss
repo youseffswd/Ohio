@@ -399,6 +399,70 @@ body{
         }
     }
 }
+.portfolio{
+    padding:40px 0;
+    background:url(../../imgs/header-bg.png),linear-gradient(to left, rgba(#d1d1d1,.25),rgba(#d1d1d1,.3)) no-repeat;
+    background-size:cover;
+    overflow:hidden;
+    .content{
+        padding:0px 15px;
+        .hidding-box{
+            text-align: center;
+            color:$wordsColor;
+            h4{
+                font-weight: 600;
+                font-size:18px;
+                margin-bottom: 5px;
+            }
+            h2{
+                font-weight:bold;
+                font-size:33px;
+                margin-bottom: 20px;
+            }
+            p{
+                margin-bottom: 30px;
+            }
+        }
+        .img-box{
+            width:100%;
+            height:auto;
+            display:flex;
+            flex-direction: column;
+            padding-bottom:30px;
+            
+
+            .img{
+                width:100%;
+                margin-bottom: 15px;
+                position:relative;
+                perspective: 1000px;
+                img{
+                    width:100%;
+                    border-radius:10px;
+                    position:absolute;
+                    top:50%;
+                    left:50%;
+                    transform: translate(-50%,-50%);
+                    transition:.1s all linear;
+                }
+            }
+            .info{
+                text-align: center;
+                a{
+                    font-weight:600;
+                    font-size:19px;
+                    text-decoration: none;
+                    color:$wordsColor;
+                    transition:$transition;
+                }
+                p{font-size:15px}
+            }
+            &:hover a{
+                color:$mainColor;
+            }
+        }
+    }
+}
 @keyframes hop{
     0%{
         box-shadow:0px 0px 0 0px rgba($greenColor  , .1);

@@ -5,7 +5,8 @@ header{
     background-size: cover;
     overflow: hidden;
     @media (min-width: 768px) { 
-        height:140vh
+        height:140vh;
+        overflow:visible;
     }
     .swimming{
         display: none;
