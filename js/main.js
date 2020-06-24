@@ -85,154 +85,220 @@ for(let i = 1 ; i <= 25;i++){
         y = 1
     }
 }
-
+$('.slider').owlCarousel({
+    center: true,
+    items:1,
+    loop:true,
+    margin:30,
+    responsive:{
+        576:{
+            items:1
+        },
+        768:{
+            items:2
+        },
+        992:{
+            items:3
+        },
+        1200:{
+            items:3
+        }
+    }
+});
 
 imgsCreater.querySelectorAll(".cls1").forEach(img => img.parentElement.dataset.ani = "left")
 imgsCreater.querySelectorAll(".cls2").forEach(img => img.parentElement.dataset.ani = "down")
 imgsCreater.querySelectorAll(".cls3").forEach(img => img.parentElement.dataset.ani = "right")
 
 let imgsDiv = imgsCreater.querySelectorAll(".img img")
-
+let imgPort = document.querySelector(".portfolio .content2 .img img")
+// let sliderImgs = document.querySelectorAll(".slider .img img")
+// sliderImgs.forEach(img => {
+//     img.onmousemove = (e) => {
+//         console.log(e.layerX,e.layerY);
+//     }
+// })
+imgPort.onmousemove = (e) => {
+    if(window.innerWidth > 992 && window.innerWidth < 1200){
+        
+        ifElse(e,imgPort,1,-1,16,10)
+    }else{
+       
+        ifElse(e,imgPort,1,-1,20,12)
+    }
+}
+imgPort.onmouseout  = () => {
+    imgPort.style.transform = "translate(-50%,-50%) rotateX(0deg) rotateY(0deg)"
+}
 imgsDiv.forEach(img => {
     
     img.onmousemove = (e) => {
-        console.log(e.layerX,e.layerY);
+        
         if(window.innerWidth < 576){
-            if(e.layerX > 1 && e.layerY < -1){
-                img.style.transform = `translate(-50%,-50%) 
-                                        rotatex(${e.layerX / 14}deg)
-                                        rotateY(${-1 * (e.layerY / 8)}deg)
-                `
-            }
-            else if(e.layerX > 1 && e.layerY > 1){
-                img.style.transform = `translate(-50%,-50%) 
-                                        rotatex(${-1 *  (e.layerX / 14)}deg)
-                                        rotateY(${e.layerY / 8}deg)
-                `
-            }
-            else if(e.layerX < -1 && e.layerY > 1){
-                img.style.transform = `translate(-50%,-50%) 
-                                        rotatex(${(e.layerX / 14)}deg)
-                                        rotateY(${-1 *(e.layerY / 8)}deg)
-                `
-            }
-            else if(e.layerX < -1 && e.layerY < -1){
-                img.style.transform = `translate(-50%,-50%) 
-                                        rotatex(${-1 *(e.layerX / 14)}deg)
-                                        rotateY(${(e.layerY / 8)}deg)
-                `
-            }
-            
+            // if(e.layerX > 1 && e.layerY < -1){
+            //     img.style.transform = `translate(-50%,-50%) 
+            //                             rotatex(${e.layerX / 14}deg)
+            //                             rotateY(${-1 * (e.layerY / 8)}deg)
+            //     `
+            // }
+            // else if(e.layerX > 1 && e.layerY > 1){
+            //     img.style.transform = `translate(-50%,-50%) 
+            //                             rotatex(${-1 *  (e.layerX / 14)}deg)
+            //                             rotateY(${e.layerY / 8}deg)
+            //     `
+            // }
+            // else if(e.layerX < -1 && e.layerY > 1){
+            //     img.style.transform = `translate(-50%,-50%) 
+            //                             rotatex(${(e.layerX / 14)}deg)
+            //                             rotateY(${-1 *(e.layerY / 8)}deg)
+            //     `
+            // }
+            // else if(e.layerX < -1 && e.layerY < -1){
+            //     img.style.transform = `translate(-50%,-50%) 
+            //                             rotatex(${-1 *(e.layerX / 14)}deg)
+            //                             rotateY(${(e.layerY / 8)}deg)
+            //     `
+            // }
+            ifElse(e,img,1,-1,14,8)
         }else if(window.innerWidth > 576 && window.innerWidth < 768){
-            if(e.layerX > 1 && e.layerY < -1){
-                img.style.transform = `translate(-50%,-50%) 
-                                        rotatex(${e.layerX / 24}deg)
-                                        rotateY(${-1 * (e.layerY / 14)}deg)
-                `
-            }
-            else if(e.layerX > 1 && e.layerY > 1){
-                img.style.transform = `translate(-50%,-50%) 
-                                        rotatex(${-1 *  (e.layerX / 24)}deg)
-                                        rotateY(${e.layerY / 14}deg)
-                `
-            }
-            else if(e.layerX < -1 && e.layerY > 1){
-                img.style.transform = `translate(-50%,-50%) 
-                                        rotatex(${(e.layerX / 24)}deg)
-                                        rotateY(${-1 *(e.layerY / 14)}deg)
-                `
-            }
-            else if(e.layerX < -1 && e.layerY < -1){
-                img.style.transform = `translate(-50%,-50%) 
-                                        rotatex(${-1 *(e.layerX / 24)}deg)
-                                        rotateY(${(e.layerY / 14)}deg)
-                `
-            }
-
+            // if(e.layerX > 1 && e.layerY < -1){
+            //     img.style.transform = `translate(-50%,-50%) 
+            //                             rotatex(${e.layerX / 24}deg)
+            //                             rotateY(${-1 * (e.layerY / 14)}deg)
+            //     `
+            // }
+            // else if(e.layerX > 1 && e.layerY > 1){
+            //     img.style.transform = `translate(-50%,-50%) 
+            //                             rotatex(${-1 *  (e.layerX / 24)}deg)
+            //                             rotateY(${e.layerY / 14}deg)
+            //     `
+            // }
+            // else if(e.layerX < -1 && e.layerY > 1){
+            //     img.style.transform = `translate(-50%,-50%) 
+            //                             rotatex(${(e.layerX / 24)}deg)
+            //                             rotateY(${-1 *(e.layerY / 14)}deg)
+            //     `
+            // }
+            // else if(e.layerX < -1 && e.layerY < -1){
+            //     img.style.transform = `translate(-50%,-50%) 
+            //                             rotatex(${-1 *(e.layerX / 24)}deg)
+            //                             rotateY(${(e.layerY / 14)}deg)
+            //     `
+            // }
+            ifElse(e,img,1,-1,24,14)
             
         }else if(window.innerWidth > 768 && window.innerWidth < 992){
-            if(e.layerX > 1 && e.layerY < -1){
-                img.style.transform = `translate(-50%,-50%) 
-                                        rotatex(${e.layerX / 16}deg)
-                                        rotateY(${-1 * (e.layerY / 10)}deg)
-                `
-            }
-            else if(e.layerX > 1 && e.layerY > 1){
-                img.style.transform = `translate(-50%,-50%) 
-                                        rotatex(${-1 *  (e.layerX / 16)}deg)
-                                        rotateY(${e.layerY / 10}deg)
-                `
-            }
-            else if(e.layerX < -1 && e.layerY > 1){
-                img.style.transform = `translate(-50%,-50%) 
-                                        rotatex(${(e.layerX / 16)}deg)
-                                        rotateY(${-1 *(e.layerY / 10)}deg)
-                `
-            }
-            else if(e.layerX < -1 && e.layerY < -1){
-                img.style.transform = `translate(-50%,-50%) 
-                                        rotatex(${-1 *(e.layerX / 16)}deg)
-                                        rotateY(${(e.layerY / 10)}deg)
-                `
-            }
+            // if(e.layerX > 1 && e.layerY < -1){
+            //     img.style.transform = `translate(-50%,-50%) 
+            //                             rotatex(${e.layerX / 16}deg)
+            //                             rotateY(${-1 * (e.layerY / 10)}deg)
+            //     `
+            // }
+            // else if(e.layerX > 1 && e.layerY > 1){
+            //     img.style.transform = `translate(-50%,-50%) 
+            //                             rotatex(${-1 *  (e.layerX / 16)}deg)
+            //                             rotateY(${e.layerY / 10}deg)
+            //     `
+            // }
+            // else if(e.layerX < -1 && e.layerY > 1){
+            //     img.style.transform = `translate(-50%,-50%) 
+            //                             rotatex(${(e.layerX / 16)}deg)
+            //                             rotateY(${-1 *(e.layerY / 10)}deg)
+            //     `
+            // }
+            // else if(e.layerX < -1 && e.layerY < -1){
+            //     img.style.transform = `translate(-50%,-50%) 
+            //                             rotatex(${-1 *(e.layerX / 16)}deg)
+            //                             rotateY(${(e.layerY / 10)}deg)
+            //     `
+            // }
+            ifElse(e,img,1,-1,16,10)
         }else if(window.innerWidth > 992 && window.innerWidth < 1200){
-            if(e.layerX > 1 && e.layerY < -1){
-                img.style.transform = `translate(-50%,-50%) 
-                                        rotatex(${e.layerX / 16}deg)
-                                        rotateY(${-1 * (e.layerY / 10)}deg)
-                `
-            }
-            else if(e.layerX > 1 && e.layerY > 1){
-                img.style.transform = `translate(-50%,-50%) 
-                                        rotatex(${-1 *  (e.layerX / 16)}deg)
-                                        rotateY(${e.layerY / 10}deg)
-                `
-            }
-            else if(e.layerX < -1 && e.layerY > 1){
-                img.style.transform = `translate(-50%,-50%) 
-                                        rotatex(${(e.layerX / 16)}deg)
-                                        rotateY(${-1 *(e.layerY / 10)}deg)
-                `
-            }
-            else if(e.layerX < -1 && e.layerY < -1){
-                img.style.transform = `translate(-50%,-50%) 
-                                        rotatex(${-1 *(e.layerX / 16)}deg)
-                                        rotateY(${(e.layerY / 10)}deg)
-                `
-            }
+            // if(e.layerX > 1 && e.layerY < -1){
+            //     img.style.transform = `translate(-50%,-50%) 
+            //                             rotatex(${e.layerX / 16}deg)
+            //                             rotateY(${-1 * (e.layerY / 10)}deg)
+            //     `
+            // }
+            // else if(e.layerX > 1 && e.layerY > 1){
+            //     img.style.transform = `translate(-50%,-50%) 
+            //                             rotatex(${-1 *  (e.layerX / 16)}deg)
+            //                             rotateY(${e.layerY / 10}deg)
+            //     `
+            // }
+            // else if(e.layerX < -1 && e.layerY > 1){
+            //     img.style.transform = `translate(-50%,-50%) 
+            //                             rotatex(${(e.layerX / 16)}deg)
+            //                             rotateY(${-1 *(e.layerY / 10)}deg)
+            //     `
+            // }
+            // else if(e.layerX < -1 && e.layerY < -1){
+            //     img.style.transform = `translate(-50%,-50%) 
+            //                             rotatex(${-1 *(e.layerX / 16)}deg)
+            //                             rotateY(${(e.layerY / 10)}deg)
+            //     `
+            // }
+            ifElse(e,img,1,-1,16,10)
         }else{
-            if(e.layerX > 1 && e.layerY < -1){
-                img.style.transform = `translate(-50%,-50%) 
-                                        rotatex(${e.layerX / 20}deg)
-                                        rotateY(${-1 * (e.layerY / 12)}deg)
-                `
-            }
-            else if(e.layerX > 1 && e.layerY > 1){
-                img.style.transform = `translate(-50%,-50%) 
-                                        rotatex(${-1 *  (e.layerX / 20)}deg)
-                                        rotateY(${e.layerY / 12}deg)
-                `
-            }
-            else if(e.layerX < -1 && e.layerY > 1){
-                img.style.transform = `translate(-50%,-50%) 
-                                        rotatex(${(e.layerX / 20)}deg)
-                                        rotateY(${-1 *(e.layerY / 12)}deg)
-                `
-            }
-            else if(e.layerX < -1 && e.layerY < -1){
-                img.style.transform = `translate(-50%,-50%) 
-                                        rotatex(${-1 *(e.layerX / 20)}deg)
-                                        rotateY(${(e.layerY / 12)}deg)
-                `
-            }
+            // if(e.layerX > 1 && e.layerY < -1){
+            //     img.style.transform = `translate(-50%,-50%) 
+            //                             rotatex(${e.layerX / 20}deg)
+            //                             rotateY(${-1 * (e.layerY / 12)}deg)
+            //     `
+            // }
+            // else if(e.layerX > 1 && e.layerY > 1){
+            //     img.style.transform = `translate(-50%,-50%) 
+            //                             rotatex(${-1 *  (e.layerX / 20)}deg)
+            //                             rotateY(${e.layerY / 12}deg)
+            //     `
+            // }
+            // else if(e.layerX < -1 && e.layerY > 1){
+            //     img.style.transform = `translate(-50%,-50%) 
+            //                             rotatex(${(e.layerX / 20)}deg)
+            //                             rotateY(${-1 *(e.layerY / 12)}deg)
+            //     `
+            // }
+            // else if(e.layerX < -1 && e.layerY < -1){
+            //     img.style.transform = `translate(-50%,-50%) 
+            //                             rotatex(${-1 *(e.layerX / 20)}deg)
+            //                             rotateY(${(e.layerY / 12)}deg)
+            //     `
+            // }
+            ifElse(e,img,1,-1,20,12)
         }
     }
-    
+    img.onmouseout  = () => {
+        img.style.transform = "translate(-50%,-50%) rotateX(0deg) rotateY(0deg)"
+    }
     
 })
 
-
-
+function ifElse(e,img,num1,num2,num3,num4){
+    if(e.layerX > num1 && e.layerY < num2){
+        img.style.transform = `translate(-50%,-50%) 
+                                rotatex(${e.layerX / num3}deg)
+                                rotateY(${-1 * (e.layerY / num4)}deg)
+        `
+    }
+    else if(e.layerX >num1 && e.layerY >num1){
+        img.style.transform = `translate(-50%,-50%) 
+                                rotatex(${-1 *  (e.layerX / num3)}deg)
+                                rotateY(${e.layerY / num4}deg)
+        `
+    }
+    else if(e.layerX < num2 && e.layerY >num1){
+        img.style.transform = `translate(-50%,-50%) 
+                                rotatex(${(e.layerX / num3)}deg)
+                                rotateY(${-1 *(e.layerY / num4)}deg)
+        `
+    }
+    else if(e.layerX < num2 && e.layerY < num2){
+        img.style.transform = `translate(-50%,-50%) 
+                                rotatex(${-1 *(e.layerX / num3)}deg)
+                                rotateY(${(e.layerY / num4)}deg)
+        `
+    }
+}
 // animation part
 
 let gBtn = document.querySelector(".half .icon")
@@ -244,14 +310,23 @@ let gBtnTimer = setInterval(() => {
     },1600)
 },3000)
 gBtn.parentElement.onmouseover = () => {
-    gLeft.style.transform = "rotateY(0deg) translateX(-20%)"
-    gLeft.style.opacity = 1
+   
+    gLeft.style.display = "flex";
+    setTimeout(() => {
+        gLeft.style.transform = "rotateY(0deg) translateX(-20%)"
+        gLeft.style.opacity = 1;
+    },100)
+
 }
 gBtn.parentElement.onmouseout = () => {
    
         gLeft.style.transform = "rotateY(90deg) translateX(-20%)"
         gLeft.style.opacity = 0
-    
+        
+        etTimeout(() => {
+            gLeft.style.display = "none";
+        },100)
+
 }
 gsap.from(".back" , {duration:.8,delay:1.5,opacity:0,x:-400})
 let eles = Array.from(document.querySelectorAll("*"))
@@ -317,12 +392,13 @@ function theStyleOfAnimation(ele,val){
 }
 
 
-setTimeout(() => {
+window.onload =  () => {
     
     imgsDiv.forEach(div => {
         div.parentElement.style.height = div.clientHeight + "px"
     })
-}, 700);
+    //imgPort.parentElement.parentElement.style.height = document.querySelector(".portfolio .content2 .desc").clientHeight + "px"
+}
 let height = document.querySelector(".pric2 .content .pric-badge .counter").clientHeight;
 document.querySelector(".pric2 .content .pric-badge .img").style.height = height + "px";
 document.querySelector(".pric2 .content .pric-badge .img").style.lineHeight = height + "px";

@@ -127,6 +127,7 @@ body{
         transform: rotatey(90deg) translatex(-20%);
         opacity: 0;
         transition: $transition ;
+        display:none;
     }
 }
 .prices{
@@ -400,12 +401,14 @@ body{
     }
 }
 .portfolio{
-    padding:40px 0;
-    background:url(../../imgs/header-bg.png),linear-gradient(to left, rgba(#d1d1d1,.25),rgba(#d1d1d1,.3)) no-repeat;
+    
+    background:url(../../imgs/header-bg.png) no-repeat;
     background-size:cover;
     overflow:hidden;
     .content{
-        padding:0px 15px;
+        padding:40px 15px;
+        background:rgba(#d1d1d1,.25);
+        width:100%;
         .hidding-box{
             text-align: center;
             color:$wordsColor;
@@ -459,6 +462,94 @@ body{
             }
             &:hover a{
                 color:$mainColor;
+            }
+        }
+    }
+    .content2{
+        padding:40px 15px;
+        background:rgba(#d1d1d1,.1);
+        .row{
+            margin-bottom: 50px;
+            .desc{
+                color:$wordsColor;
+                h6{
+                    
+                    font-size:17px;
+                    margin-bottom: 15px;
+                }
+                h2{
+                    
+                    font-size:39px;
+                    font-weight:bold;
+                    margin-bottom: 15px;
+                }
+            }
+            .father{
+                display:flex;
+                width:100%;
+                align-items: center;
+                height:100%;
+                
+                .img{
+                    width:70%;
+                    height:100%;
+                    perspective: 1000px;
+                    margin-right: 8%;
+                    position:relative;
+                    img{
+                        width:100%;
+                        height:100%;
+                        position: absolute;
+                        top:50%;
+                        left:50%;
+                        transform:translate(-50%,-50%);
+                        transition:.1s all linear;
+                    }
+                }
+                .mobile{
+                    position:relative;
+                    width:22%;
+                    background: url(../../imgs/framePhone.png);
+                    height:80%;
+                    background-size: contain;
+                    
+                    img{
+                        position:absolute;
+                        width: 100%;
+                        height:100%;
+                        top:50%;
+                        left:50%;
+                        transform:translate(-50%,-50%);
+                        &:first-of-type{
+                            z-index:100;
+                        }
+                        &:nth-of-type(2){
+                            z-index:50;
+                            border-radius: 25px;
+                        }
+                        &:last-of-type{
+                            z-index:55;
+                        }
+                    }
+                }
+            }
+        }
+        .slider{
+            // .img{
+            //     position:relative;
+            //     img{
+            //         position:absolute;
+            //         top:50%;
+            //         left:50%;
+            //         transform:translate(-50%,-50%);
+            //     }
+            // }
+            .owl-dots{
+                .owl-dot{
+                    &:focus{
+                        outline:none;
+                    }
+                }
             }
         }
     }
