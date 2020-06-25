@@ -85,7 +85,7 @@ for(let i = 1 ; i <= 25;i++){
         y = 1
     }
 }
-$('.slider').owlCarousel({
+$('.slider-imgs').owlCarousel({
     center: true,
     items:1,
     loop:true,
@@ -95,7 +95,7 @@ $('.slider').owlCarousel({
             items:1
         },
         768:{
-            items:2
+            items:3
         },
         992:{
             items:3
@@ -105,6 +105,59 @@ $('.slider').owlCarousel({
         }
     }
 });
+let owlStage = document.querySelector(".portfolio .owl-stage");
+let anyThing = document.querySelector(".portfolio .theFlex > div")
+let z = 0
+owlStage.ontransitionend = () => {
+    // owlStage.firstChild.firstChild.dataset.num
+    let span = document.createElement("span")
+    if(window.innerWidth <= 767 ){
+        span.textContent = owlStage.querySelector(".active").firstElementChild.dataset.num
+    }else{
+        span.textContent = owlStage.querySelectorAll(".active")[1].firstElementChild.dataset.num
+    }
+   
+    anyThing.appendChild(span);
+    let spans = document.querySelectorAll(".theFlex > div span")
+    z++
+    setTimeout(() => {
+        spans.forEach((span) => {
+            span.style.transform = `translateY(-${z * 100}%)`
+            
+            
+        })
+        
+    },200)
+    
+}
+let owlStage2 = document.querySelector(".advs .owl-stage");
+let anyThing2 = document.querySelector(".advs .theFlex > div")
+
+let t = 0
+owlStage2.ontransitionend = () => {
+    // owlStage.firstChild.firstChild.dataset.num
+    let span = document.createElement("span")
+    if(window.innerWidth <= 767 ){
+        span.textContent = owlStage2.querySelector(".active").firstElementChild.dataset.num
+    }else{
+        span.textContent = owlStage2.querySelectorAll(".active")[1].firstElementChild.dataset.num
+    }
+   
+    anyThing2.appendChild(span);
+    let spans = document.querySelectorAll(".theFlex > div span")
+    t++
+    setTimeout(() => {
+        spans.forEach((span) => {
+            span.style.transform = `translateY(-${t * 100}%)`
+            
+            
+        })
+        
+    },200)
+    
+}
+
+
 
 imgsCreater.querySelectorAll(".cls1").forEach(img => img.parentElement.dataset.ani = "left")
 imgsCreater.querySelectorAll(".cls2").forEach(img => img.parentElement.dataset.ani = "down")

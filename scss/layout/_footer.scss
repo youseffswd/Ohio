@@ -1,0 +1,31 @@
+.footer{
+    background: $wordsColor;
+    color:#fff;
+    overflow: hidden;
+    .content{
+        padding:40px 15px 0 15px;
+        .container{
+            .row{
+                .col-12{
+                    margin-bottom: 30px;
+                    h3{
+                        font-size:24px;
+                        font-weight: bold;
+                        margin-bottom: 20px;
+                    }
+                    p{
+                        color: rgba(#fff,.5);
+                    }
+                }
+            }
+        }
+        footer{
+            border-top: .5px solid rgba(#fff,.15);
+            padding:20px 0;
+            color: rgba(#fff,.5);
+            strong{
+                color: $mainColor;
+            }
+        }
+    }
+}
